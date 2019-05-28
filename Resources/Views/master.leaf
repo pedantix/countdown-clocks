@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>#(title)</title>
+        <noscript>
+          <!-- TODO: Sylize the app's without script message -->
+          <style>
+          .with-css {
+            display: none;
+          }
+          </style>
+        </noscript>
+    </head>
+
+    <body>
+      <noscript>
+        <h1>JavaScript is Disabled</h1>
+        <p>Countdown clocks requires JavaScript to be enabled!</p>
+      </noscript>
+      <div class="with-css">
+      #get(body)
+      </div>
+    </body>
+</html>

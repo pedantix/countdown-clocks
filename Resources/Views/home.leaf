@@ -1,1 +1,5 @@
-Hello, #(name)!
+#set("body") {
+    <p>Welcome to Vapor!</p>
+}
+
+#embed("master")
