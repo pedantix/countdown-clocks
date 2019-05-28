@@ -3,11 +3,7 @@
         <title>#(title)</title>
         <noscript>
           <!-- TODO: Sylize the app's without script message -->
-          <style>
-          .with-css {
-            display: none;
-          }
-          </style>
+          <link rel="stylesheet" type="text/css" href="noscript.css">
         </noscript>
     </head>
 
