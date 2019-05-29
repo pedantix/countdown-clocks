@@ -1,10 +1,2 @@
 // TODO: Write a custom file for bootstrap to be shared between noscript and others
 @import "~bootstrap/scss/bootstrap";
-
-.with-css {
-  display: none;
-}
-
-body {
-  background-color: map-get($theme-colors, "warning");
-}
