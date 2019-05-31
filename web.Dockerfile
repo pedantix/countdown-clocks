@@ -1,3 +1,13 @@
+# This app runs on ubuntu but relies on Swift and Node to build its application assets and binaries.
+# Read more about multistage builds here: https://docs.docker.com/develop/develop-images/multistage-build/
+
+# Build the node assets first
+FROM node:7.7.3
+COPY . .
+RUN npm install
+RUN npm rebuild node-sass
+RUN npm run build
+
 # You can set the Swift version to what you need for your app. Versions can be found here: https://hub.docker.com/_/swift
 FROM swift:5.0 as builder
 
