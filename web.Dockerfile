@@ -37,6 +37,8 @@ COPY --from=builder /build/lib/* /usr/lib/
 COPY --from=builder /app/Public ./Public
 # Uncomment the next line if you are using Leaf
 COPY --from=builder /app/Resources ./Resources
+# Copy nodebuilder files
+COPY --from=nodebuilder /app/Resources ./Resources
 ENV ENVIRONMENT=$env
 
 ENTRYPOINT ./Run serve --env $ENVIRONMENT --hostname 0.0.0.0 --port 80
