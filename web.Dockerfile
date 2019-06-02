@@ -22,6 +22,7 @@ WORKDIR /app
 COPY . .
 RUN mkdir -p /build/lib && cp -R /usr/lib/swift/linux/*.so* /build/lib
 RUN swift build -c release && mv `swift build -c release --show-bin-path` /build/bin
+COPY --from=nodebuilder /Public ./Public
 
 # Production image
 FROM ubuntu:18.04
@@ -37,8 +38,7 @@ COPY --from=builder /build/lib/* /usr/lib/
 COPY --from=builder /app/Public ./Public
 # Uncomment the next line if you are using Leaf
 COPY --from=builder /app/Resources ./Resources
-# Copy nodebuilder files
-COPY --from=nodebuilder /app/Resources ./Resources
+
 ENV ENVIRONMENT=$env
 
 ENTRYPOINT ./Run serve --env $ENVIRONMENT --hostname 0.0.0.0 --port 80
