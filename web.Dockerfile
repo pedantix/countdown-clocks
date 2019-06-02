@@ -2,7 +2,7 @@
 # Read more about multistage builds here: https://docs.docker.com/develop/develop-images/multistage-build/
 
 # Build the node assets first
-FROM node:7.7.3
+FROM node:7.7.3 as nodebuilder
 COPY . .
 RUN npm install
 RUN npm rebuild node-sass
