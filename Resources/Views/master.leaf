@@ -6,6 +6,7 @@
           <link rel="stylesheet" type="text/css" href="noscript.css">
         </noscript>
         <link rel="stylesheet" type="text/css" href="main.css">
+        <script charset="utf-8" src="main.js"></script>
     </head>
 
     <body>
@@ -22,8 +23,8 @@
           </div>
         </div>
       </noscript>
-      <div class="with-css">
+    <div class="with-css">
       #get(body)
-      </div>
-    </body>
+    </div>
+  </body>
 </html>
