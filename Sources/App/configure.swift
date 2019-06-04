@@ -31,4 +31,9 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
     try migrate(migrations: &migrationConfig)
     return migrationConfig
   }
+
+  // Leaf
+  var tagsConfig = LeafTagConfig.default()
+  try addTags(tagsConfig: &tagsConfig)
+  services.register(tagsConfig)
 }
