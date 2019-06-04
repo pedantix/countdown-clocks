@@ -24,6 +24,11 @@
         </div>
       </noscript>
     <div class="with-css">
+      <div class="vue-container">
+        <b-navbar toggleable="lg" type="dark" variant="primary">
+          <b-navbar-brand href="/">Countdown Clocks</b-navbar-brand>
+        </b-navbar>
+      </div>
       #get(body)
     </div>
   </body>
