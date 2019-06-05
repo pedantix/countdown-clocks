@@ -1,0 +1,16 @@
+<html>
+  #embed("head")
+  <body>
+    #embed("noscript")
+    <div class="with-css">
+      #embed("navbar")
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            #markdown(content)
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

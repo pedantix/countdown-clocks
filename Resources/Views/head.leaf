@@ -1,0 +1,8 @@
+<head>
+  <title>#(title)</title>
+  <noscript>
+    <link rel="stylesheet" type="text/css" href="noscript.css">
+  </noscript>
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <script charset="utf-8" src="main.js"></script>
+</head>

@@ -1,34 +1,9 @@
 <html>
-    <head>
-        <title>#(title)</title>
-        <noscript>
-          <!-- TODO: Sylize the app's without script message -->
-          <link rel="stylesheet" type="text/css" href="noscript.css">
-        </noscript>
-        <link rel="stylesheet" type="text/css" href="main.css">
-        <script charset="utf-8" src="main.js"></script>
-    </head>
-
-    <body>
-      <noscript>
-        <div class="container">
-          <br/>
-          <div class="row">
-            <div class="col">
-              <div class="jumbotron bg-primary">
-                <h1 class="display-4">JavaScript is Disabled</h1>
-                <p class="lead">Countdown clocks requires JavaScript to be enabled in order to function.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </noscript>
+  #embed("head")
+  <body>
+    #embed("noscript")
     <div class="with-css">
-      <div class="vue-container">
-        <b-navbar toggleable="lg" type="dark" variant="primary">
-          <b-navbar-brand href="/">Countdown Clocks</b-navbar-brand>
-        </b-navbar>
-      </div>
+      #embed("navbar")
       #get(body)
     </div>
   </body>
