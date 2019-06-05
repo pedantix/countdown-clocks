@@ -1,0 +1,13 @@
+<noscript>
+  <div class="container">
+    <br/>
+    <div class="row">
+      <div class="col">
+        <div class="jumbotron bg-primary">
+          <h1 class="display-4">JavaScript is Disabled</h1>
+          <p class="lead">Countdown clocks requires JavaScript to be enabled in order to function.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</noscript>

@@ -2,13 +2,12 @@ import Vapor
 
 /// Register your application's routes here.
 public func routes(_ router: Router) throws {
-    // Basic "It works" example
-    router.get { req in
-      return try req.view().render("home", ["name": "Shaun", "title": "Welcome to Countdown Clocks"])
-    }
+  // Markdown Pages
+  let mdController = MarkdownController()
+  router.get("beta", use: mdController.markdownPage(filename: "beta"))
 
-    // Basic "Hello, world!" example
-    router.get("hello") { req in
-        return "Hello, world!"
-    }
+  // TODO: Abstract out a home controller
+  router.get { req -> Future<View> in
+    return try req.view().render("home", [Strings.titleKey: Strings.title])
+  }
 }
