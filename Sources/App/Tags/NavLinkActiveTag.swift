@@ -6,7 +6,7 @@ enum NavBarActiveSection: String {
 
 final class NavLinkActiveTag: TagRenderer {
   func render(tag: TagContext) throws -> EventLoopFuture<TemplateData> {
-    guard let tagName = tag.parameters[0].string,
+    guard tag.parameters.count == 2, let tagName = tag.parameters[0].string,
       let activeTag = tag.parameters[1].string else {
         return tag.container.future(.string(""))
     }
