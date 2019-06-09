@@ -18,13 +18,16 @@ final class MarkdownControllerTests: XCTestCase {
   }
 
   func testBeta() throws {
-    let bodyText = try app.sendRequest(to: "/beta", method: .GET, body: EmptyBody()).http.description
+    let http = try app.sendRequest(to: "/beta", method: .GET, body: EmptyBody()).http
+    XCTAssertEqual(http.status, .ok)
 
-    print(bodyText)
+    let bodyText = http.description
     XCTAssertTrue(bodyText.contains("<!DOCTYPE html>"))
     XCTAssertTrue(bodyText.contains("<html>"))
     XCTAssertTrue(bodyText.contains("</html>"))
     XCTAssertTrue(bodyText.contains("<h4>Data Volatility Statement</h4>"), "test that markdown is being processed as expected")
+
+    XCTAssertTrue(false, "This failed")
   }
 
   static let allTests = [
