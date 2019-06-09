@@ -26,8 +26,6 @@ final class MarkdownControllerTests: XCTestCase {
     XCTAssertTrue(bodyText.contains("<html>"))
     XCTAssertTrue(bodyText.contains("</html>"))
     XCTAssertTrue(bodyText.contains("<h4>Data Volatility Statement</h4>"), "test that markdown is being processed as expected")
-
-    XCTAssertTrue(false, "This failed")
   }
 
   static let allTests = [
