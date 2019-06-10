@@ -4,7 +4,7 @@ import PackageDescription
 let package = Package(
   name: "countdownclocks",
   products: [
-    .library(name: "countdownclocks", targets: ["App"]),
+    .library(name: "countdownclocks", targets: ["App"])
   ],
   dependencies: [
     // 💧 A server-side Swift web framework.
@@ -17,7 +17,7 @@ let package = Package(
 
     // 🐘 Non-blocking, event-driven Swift client for PostgreSQL.
     .package(url: "https://github.com/vapor/postgresql.git", from: "1.4.0"),
-    .package(url: "https://github.com/vapor/fluent-postgresql.git", from: "1.0.0"),
+    .package(url: "https://github.com/vapor/fluent-postgresql.git", from: "1.0.0")
   ],
   targets: [
     .target(name: "App", dependencies: [

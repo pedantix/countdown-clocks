@@ -1,6 +1,16 @@
 version: 2
 
 jobs:
+  swiftlint:
+    docker:
+      - image: dantoml/swiftlint:latest
+    steps:
+      - checkout
+      - run: swiftlint lint --reporter junit | tee result.xml
+      - store_artifacts:
+          path: result.xml
+      - store_test_results:
+          path: result.xml
   linux:
     docker:
       - image: codevapor/swift:5.0
@@ -29,6 +39,7 @@ workflows:
   version: 2
   tests:
     jobs:
+      - swiftlint
       - linux
       - linux-release
 
@@ -41,5 +52,6 @@ workflows:
               only:
                 - master
     jobs:
+      - swiftlint
       - linux
       - linux-release
