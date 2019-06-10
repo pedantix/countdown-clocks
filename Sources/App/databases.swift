@@ -7,7 +7,11 @@ public func databases(config: inout DatabasesConfig) throws {
     guard let dbConfig = PostgreSQLDatabaseConfig(url: databaseUrl) else { throw Abort(.internalServerError) }
     postgreSQLDatabaseConfig = dbConfig
   } else {
-    postgreSQLDatabaseConfig = PostgreSQLDatabaseConfig(hostname: "localhost", username: "vapor", database: "countdownclocks")
+    postgreSQLDatabaseConfig = PostgreSQLDatabaseConfig(
+      hostname: "localhost",
+      username: "vapor",
+      database: "countdownclocks"
+    )
   }
   config.add(database: PostgreSQLDatabase(config: postgreSQLDatabaseConfig), as: .psql)
 }

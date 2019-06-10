@@ -8,7 +8,7 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
   try services.register(FluentPostgreSQLProvider())
   try services.register(LeafProvider())
   config.prefer(LeafRenderer.self, for: ViewRenderer.self)
-  
+
   // Register routes to the router
   let router = EngineRouter.default()
   routes(router)
@@ -26,7 +26,7 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
   services.register(databasesConfig)
 
   // Configure migrations
-  services.register { container -> MigrationConfig in
+  services.register { _ -> MigrationConfig in
     var migrationConfig = MigrationConfig()
     try migrate(migrations: &migrationConfig)
     return migrationConfig

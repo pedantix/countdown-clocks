@@ -14,7 +14,7 @@ final class MarkdownControllerTests: XCTestCase {
 
   override func setUp() {
     super.setUp()
-    app = try! Application.easyTestable()
+    app = try? Application.easyTestable()
   }
 
   func testBeta() throws {
@@ -25,12 +25,11 @@ final class MarkdownControllerTests: XCTestCase {
     XCTAssertTrue(bodyText.contains("<!DOCTYPE html>"))
     XCTAssertTrue(bodyText.contains("<html>"))
     XCTAssertTrue(bodyText.contains("</html>"))
-    XCTAssertTrue(bodyText.contains("<h4>Data Volatility Statement</h4>"), "test that markdown is being processed as expected")
+    XCTAssertTrue(bodyText.contains("<h4>Data Volatility Statement</h4>"),
+                  "test that markdown is being processed as expected")
   }
 
   static let allTests = [
     ("testBeta", testBeta)
   ]
 }
-
-

@@ -24,7 +24,13 @@ extension Application {
 }
 
 extension Application {
-  func sendRequest<Body>(to path: String, method: HTTPMethod, headers: HTTPHeaders = .init(), body: Body?, isLoggedInRequest: Bool = false) throws -> Response where Body: Content {
+  func sendRequest<Body>(
+    to path: String,
+    method: HTTPMethod,
+    headers: HTTPHeaders = .init(),
+    body: Body?,
+    isLoggedInRequest: Bool = false
+  ) throws -> Response where Body: Content {
     let headers = headers
 
     /*
@@ -50,4 +56,3 @@ extension Application {
 }
 
 struct EmptyBody: Content {}
-
