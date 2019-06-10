@@ -18,10 +18,6 @@ let package = Package(
     // 🐘 Non-blocking, event-driven Swift client for PostgreSQL.
     .package(url: "https://github.com/vapor/postgresql.git", from: "1.4.0"),
     .package(url: "https://github.com/vapor/fluent-postgresql.git", from: "1.0.0"),
-
-    //  Required for Swift 5 on Linux
-    .package(url: "https://github.com/apple/swift-nio.git", from: "1.13.2"),
-    .package(url: "https://github.com/apple/swift-nio-ssl.git", from: "1.4.0"),
   ],
   targets: [
     .target(name: "App", dependencies: [

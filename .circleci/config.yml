@@ -3,28 +3,27 @@ version: 2
 jobs:
   linux:
     docker:
-      - image: swift:5.0.1
+      - image: codevapor/swift:5.0
+      - image: circleci/postgres:latest
+        environment:
+          POSTGRES_USER: vapor
+          POSTGRES_DB: countdownclocks
+          POSTGRES_PASSWORD: ""
     steps:
       - checkout
       - run: apt-get update
-      - run: apt-get install -yq libssl-dev pkg-config zlib1g-dev
-      - run:
-          name: Compile code
-          command: swift build
-      - run:
-          name: Run unit tests
-          command: swift test
+      - run: apt-get update; apt-get install -y libssl-dev zlib1g-dev
+      - run: swift build
+      - run: swift test
 
   linux-release:
     docker:
-      - image: swift:5.0.1
+      - image: codevapor/swift:5.0
     steps:
       - checkout
       - run: apt-get update
-      - run: apt-get install -yq libssl-dev pkg-config zlib1g-dev 
-      - run:
-          name: Compile code with optimizations
-          command: swift build -c release
+      - run: apt-get update; apt-get install -y libssl-dev zlib1g-dev
+      - run: swift build -c release
 
 workflows:
   version: 2
