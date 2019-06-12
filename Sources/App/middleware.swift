@@ -21,7 +21,19 @@ public func addMiddleware(_ services: inout Services) throws {
     .fontSrc(sources: "'self' https://fonts.gstatic.com data:")
 
   let cspConfig = ContentSecurityPolicyConfiguration(value: cspBuilder)
+  let strictTransportSecurityConfig = StrictTransportSecurityConfiguration(
+    maxAge: 31536000,
+    includeSubdomains: true,
+    preload: true
+  )
 
-  let securityHeadersFactory = SecurityHeadersFactory().with(contentSecurityPolicy: cspConfig)
+  let referrerPolicyConfig = ReferrerPolicyConfiguration(.noReferrer)
+
+  // SecurityHeadersFactory
+  let securityHeadersFactory = SecurityHeadersFactory()
+    .with(contentSecurityPolicy: cspConfig)
+    .with(strictTransportSecurity: strictTransportSecurityConfig)
+    .with(referrerPolicy: referrerPolicyConfig)
+
   services.register(securityHeadersFactory.build())
 }
