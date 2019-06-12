@@ -1,5 +1,6 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { VueLoaderPlugin } = require('vue-loader');
 
 module.exports = {
   entry: {
@@ -35,14 +36,19 @@ module.exports = {
             'sass-loader',
           ],
         },// TODO: Minify CSS, consider the following
+        {
+          test: /\.vue$/,
+          use: 'vue-loader'
+        }
     ]
   },
   plugins: [
     new MiniCssExtractPlugin({filename: "[name].css"}),
+    new VueLoaderPlugin()
   ],
   resolve: {
     alias: {
-      'vue$': 'vue/dist/vue.esm.js'
+      vue$: 'vue/dist/vue.esm.js'
     }
   }
 };
