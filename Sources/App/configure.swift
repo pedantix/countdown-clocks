@@ -14,11 +14,8 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
   routes(router)
   services.register(router, as: Router.self)
 
-  // Register middleware
-  var middlewares = MiddlewareConfig() // Create _empty_ middleware config
-  middlewares.use(FileMiddleware.self) // Serves files from `Public/` directory
-  middlewares.use(ErrorMiddleware.self) // Catches errors and converts to HTTP response
-  services.register(middlewares)
+  // Configure Middleware
+  try addMiddleware(&services)
 
   // Register the configured SQLite database to the database config.
   var databasesConfig = DatabasesConfig()
