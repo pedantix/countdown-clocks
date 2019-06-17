@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "start": "webpack --watch"
+    "start": "webpack --watch",
+    "lint": "eslint --ext .js,.vue src"
   },
   "private": true,
   "keywords": [],
@@ -18,6 +19,9 @@
     "babel-loader": "^8.0.6",
     "css-loader": "^2.1.1",
     "cssnano": "^4.1.10",
+    "eslint": "^5.16.0",
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-vue": "^5.2.2",
     "mini-css-extract-plugin": "^0.7.0",
     "node-sass": "^4.12.0",
     "postcss-loader": "^3.0.0",
@@ -25,6 +29,7 @@
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "vue-loader": "^15.7.0",
+    "vue-template-compiler": "^2.6.10",
     "webpack": "^4.32.2",
     "webpack-cli": "^3.3.2"
   },

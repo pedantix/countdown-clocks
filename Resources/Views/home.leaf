@@ -4,10 +4,18 @@
   <div class="row">
     <div class="col-sm">
       <div class="vue-container">
-        <b-jumbotron header="Hello, world!" lead="Countdown Clocks Coming Soon!">
-          <hr class="my-4">
-          <p>Pardon our dust while we figure out how to help you countdown to the moments that matter</p>
-          <b-button variant="primary" v-b-popover.hover="'Coming Soon!'" title="More Info">Info</b-button>
+        <b-jumbotron>
+          <clock-form></clock-form>
+        </b-jumbotron>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm">
+      <div class="vue-container">
+        <b-jumbotron>
+          <clock-display></clock-display>
         </b-jumbotron>
       </div>
     </div>

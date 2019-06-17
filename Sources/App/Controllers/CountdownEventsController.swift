@@ -10,5 +10,9 @@ final class CountdownEventsController {
   func home(_ req: Request) throws -> Future<View> {
     return try req.view().render("home", [Strings.titleKey: Strings.title])
   }
+
+  func create(_ req: Request) throws -> Future<View> {
+    throw Abort(.notImplemented)
+  }
 }
 

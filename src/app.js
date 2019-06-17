@@ -1,9 +1,14 @@
-import './scss/app.scss'
+import './scss/app.scss';
+import Vue from 'vue';
+import BootstrapVue from 'bootstrap-vue';
 
-import Vue from 'vue'
-import BootstrapVue from 'bootstrap-vue'
+import ClockDisplay from './vue-components/clock-display.vue';
+import ClockForm from './vue-components/clock-form.vue';
 
-Vue.use(BootstrapVue)
+const components = { ClockDisplay, ClockForm };
+
+Vue.use(BootstrapVue);
+
 
 window.addEventListener('DOMContentLoaded', () => {
   if (window.vueapp != null) {
@@ -18,7 +23,8 @@ window.addEventListener('DOMContentLoaded', () => {
   vueNodes.forEach(node => {
     if (node != null) {
       var vueapp = new Vue({
-        el: node
+        el: node,
+        components: components
       });
       window.vueapp.push(vueapp);
     }

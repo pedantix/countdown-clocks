@@ -3,6 +3,7 @@ import FluentPostgreSQL
 final class CountdownEvent: PostgreSQLModel {
   var id: Int?
 
+  // TODO: Validate the following
   // Mandatory Fields!
   var title: String
   var date: Date
