@@ -19,6 +19,9 @@ let package = Package(
     .package(url: "https://github.com/vapor/postgresql.git", from: "1.4.0"),
     .package(url: "https://github.com/vapor/fluent-postgresql.git", from: "1.0.0"),
 
+    // Model Validation
+    .package(url: "https://github.com/vapor/validation.git", from: "2.0.0"),
+
     // Security
     .package(url: "https://github.com/brokenhandsio/VaporSecurityHeaders.git", from: "2.0.0")
   ],
@@ -29,7 +32,8 @@ let package = Package(
       "Vapor",
       "PostgreSQL",
       "FluentPostgreSQL",
-      "VaporSecurityHeaders"
+      "VaporSecurityHeaders",
+      "Validation"
     ]),
     .target(name: "Run", dependencies: ["App"]),
     .testTarget(name: "AppTests", dependencies: [
