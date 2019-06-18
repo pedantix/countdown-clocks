@@ -8,3 +8,5 @@ node_modules
 
 Public/*.css
 Public/*.js
+.nyc_output/*
+coverage/*
