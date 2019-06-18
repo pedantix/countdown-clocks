@@ -31,5 +31,5 @@ window.addEventListener('DOMContentLoaded', () => {
       window.vueapp.push(vueapp);
     }
   });
-  console.log(`Initialized ${vueNodes.length} Vue Containers`);
+  //console.log(`Initialized ${vueNodes.length} Vue Containers`);
 });

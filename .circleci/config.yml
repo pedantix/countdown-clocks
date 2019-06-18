@@ -1,6 +1,15 @@
 version: 2
 
 jobs:
+  eslint:
+    docker:
+      - image: node:10.16.0
+    environment:
+      TZ: "America/Chicago"
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm run lint
   jstests:
     docker:
       - image: node:10.16.0

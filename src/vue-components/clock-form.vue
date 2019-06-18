@@ -60,10 +60,10 @@ export default {
     handleSubmit(evt) {
       evt.preventDefault();
       const data = dateEncoder(this.form);
-      axios.post('/', data).then(event => {
-        console.log(`Success: ${event}`);
-      }, error => {
-        console.log(`Unhandled Error ${error}`);
+      axios.post('/', data).then(() => {
+        //console.log(`Success: ${event}`);
+      }, () => {
+        //console.log(`Unhandled Error ${error}`);
       });
     }
   }

@@ -49,5 +49,14 @@
     "bootstrap-vue": "^2.0.0-rc.22",
     "moment": "^2.24.0",
     "vue": "^2.6.10"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "node": true,
+      "mocha": true,
+      "es6": true,
+      "amd": true
+    }
   }
 }
