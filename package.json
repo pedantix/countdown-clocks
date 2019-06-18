@@ -7,7 +7,8 @@
     "build": "webpack",
     "start": "webpack --watch",
     "lint": "eslint --ext .js,.vue src test",
-    "test": "cross-env NODE_ENV=test nyc --reporter=lcov --reporter=text mocha-webpack -w --webpack-config webpack.config.js --require test/setup.js test/**/*.spec.js"
+    "test": "cross-env NODE_ENV=test nyc --reporter=lcov --reporter=text mocha-webpack -w --webpack-config webpack.config.js --require test/setup.js test/**/*.spec.js",
+    "test-ci": "cross-env NODE_ENV=test nyc --reporter=lcov --reporter=text mocha-webpack --webpack-config webpack.config.js --require test/setup.js test/**/*.spec.js"
   },
   "private": true,
   "keywords": [],

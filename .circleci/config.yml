@@ -1,6 +1,16 @@
 version: 2
 
 jobs:
+  jstests:
+    docker:
+      - image: node:10.16.0
+    environment:
+      TZ: "America/Chicago"
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm run build
+      - run: npm run test-ci
   swiftlint:
     docker:
       - image: dantoml/swiftlint:latest
@@ -39,6 +49,7 @@ workflows:
   version: 2
   tests:
     jobs:
+      - jstests
       - swiftlint
       - linux
       - linux-release
@@ -52,6 +63,7 @@ workflows:
               only:
                 - master
     jobs:
+      - jstests
       - swiftlint
       - linux
       - linux-release
